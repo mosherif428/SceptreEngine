@@ -113,6 +113,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>$(CoreLibraryDependencies);%(AdditionalDependencies);d3d11.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -132,16 +133,30 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Sceptre\Assert.h" />
+    <ClInclude Include="src\Sceptre\ImguiLayer.h" />
+    <ClInclude Include="src\Sceptre\Layer.h" />
     <ClInclude Include="src\enginepch.h" />
     <ClInclude Include="src\Events\ApplicationEvent.h" />
     <ClInclude Include="src\Events\Event.h" />
     <ClInclude Include="src\Events\KeyEvent.h" />
     <ClInclude Include="src\Events\MouseEvent.h" />
+    <ClInclude Include="src\Sceptre\LayerStack.h" />
     <ClInclude Include="src\Sceptre\Log.h" />
     <ClInclude Include="src\Sceptre.h" />
     <ClInclude Include="src\Sceptre\Core.h" />
     <ClInclude Include="src\Sceptre\Engine.h" />
     <ClInclude Include="src\Sceptre\EntryPoint.h" />
+    <ClInclude Include="src\Sceptre\Window.h" />
+    <ClInclude Include="src\Sceptre\WindowsWindow.h" />
+    <ClInclude Include="src\vendor\imgui\backends\imgui_impl_dx11.h" />
+    <ClInclude Include="src\vendor\imgui\backends\imgui_impl_win32.h" />
+    <ClInclude Include="src\vendor\imgui\imconfig.h" />
+    <ClInclude Include="src\vendor\imgui\imgui.h" />
+    <ClInclude Include="src\vendor\imgui\imgui_internal.h" />
+    <ClInclude Include="src\vendor\imgui\imstb_rectpack.h" />
+    <ClInclude Include="src\vendor\imgui\imstb_textedit.h" />
+    <ClInclude Include="src\vendor\imgui\imstb_truetype.h" />
     <ClInclude Include="src\vendor\spdlog\async.h" />
     <ClInclude Include="src\vendor\spdlog\async_logger-inl.h" />
     <ClInclude Include="src\vendor\spdlog\async_logger.h" />
@@ -248,9 +263,29 @@
     <ClInclude Include="src\vendor\spdlog\version.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Sceptre\ImguiLayer.cpp" />
+    <ClCompile Include="src\Sceptre\Layer.cpp" />
     <ClCompile Include="src\enginepch.cpp" />
+    <ClCompile Include="src\Sceptre\LayerStack.cpp" />
     <ClCompile Include="src\Sceptre\Log.cpp" />
     <ClCompile Include="src\Sceptre\Engine.cpp" />
+    <ClCompile Include="src\Sceptre\Window.cpp" />
+    <ClCompile Include="src\Sceptre\WindowsWindow.cpp" />
+    <ClCompile Include="src\vendor\imgui\backends\imgui_impl_dx11.cpp" />
+    <ClCompile Include="src\vendor\imgui\backends\imgui_impl_win32.cpp" />
+    <ClCompile Include="src\vendor\imgui\imgui.cpp" />
+    <ClCompile Include="src\vendor\imgui\imgui_demo.cpp" />
+    <ClCompile Include="src\vendor\imgui\imgui_draw.cpp" />
+    <ClCompile Include="src\vendor\imgui\imgui_tables.cpp" />
+    <ClCompile Include="src\vendor\imgui\imgui_widgets.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="src\vendor\imgui\LICENSE.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\vendor\imgui\.editorconfig" />
+    <None Include="src\vendor\imgui\.gitattributes" />
+    <None Include="src\vendor\imgui\.gitignore" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
