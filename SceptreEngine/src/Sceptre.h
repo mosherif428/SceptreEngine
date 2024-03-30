@@ -7,5 +7,4 @@
 #include "Sceptre/Log.h"
 #include "Sceptre/EntryPoint.h"
 #include "Sceptre/ImguiLayer.h"
-#include "Sceptre/ImguiWrappers.h"
 #include "vendor/imgui/imgui.h"

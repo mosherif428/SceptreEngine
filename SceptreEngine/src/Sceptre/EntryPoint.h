@@ -4,7 +4,6 @@
 #include "../vendor/imgui/imgui.h"
 #include "../vendor/imgui/backends/imgui_impl_dx11.h"
 #include "../vendor/imgui/backends/imgui_impl_win32.h"
-#include "ImguiWrappers.h"
 #include "../vendor/imgui/backends/imgui_impl_win32.cpp"
 
 #ifdef SC_PLATFORM_WINDOWS
@@ -48,7 +47,7 @@ int main(int, char**)
     // Setup Dear ImGui context
     IMGUI_CHECKVERSION();
     ImGui::CreateContext(); //ImGui::CreateContext();
-    ImGuiIO& io = SceptreImgui_GetIO(); (void)io; //ImGui::GetIO()
+    ImGuiIO& io = ImGui::GetIO(); (void)io; //ImGui::GetIO()
     io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;     // Enable Keyboard Controls
     io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;      // Enable Gamepad Controls
 
@@ -69,12 +68,12 @@ int main(int, char**)
     // - Read 'docs/FONTS.md' for more instructions and details.
     // - Remember that in C/C++ if you want to include a backslash \ in a string literal you need to write a double backslash \\ !
     //io.Fonts->AddFontDefault();
-    //io.Fonts->AddFontFromFileTTF("c:\\Windows\\Fonts\\segoeui.ttf", 18.0f);
+    //io.Fonts->AddFontFromFileTTF("C:\\Users\\msher\\AppData\\Local\\Microsoft\\Windows\\Fonts\\AtkinsonHyperlegible-Regular.ttf", 18.0f);
     //io.Fonts->AddFontFromFileTTF("../../misc/fonts/DroidSans.ttf", 16.0f);
     //io.Fonts->AddFontFromFileTTF("../../misc/fonts/Roboto-Medium.ttf", 16.0f);
     //io.Fonts->AddFontFromFileTTF("../../misc/fonts/Cousine-Regular.ttf", 15.0f);
-    //ImFont* font = io.Fonts->AddFontFromFileTTF("c:\\Windows\\Fonts\\ArialUni.ttf", 18.0f, nullptr, io.Fonts->GetGlyphRangesJapanese());
-    //IM_ASSERT(font != nullptr);
+    ImFont* font = io.Fonts->AddFontFromFileTTF("C:\\Users\\msher\\AppData\\Local\\Microsoft\\Windows\\Fonts\\AtkinsonHyperlegible-Regular.ttf", 18.0f, nullptr, io.Fonts->GetGlyphRangesJapanese());
+    IM_ASSERT(font != nullptr);
 
     // Our state
     bool show_demo_window = true;
@@ -111,7 +110,7 @@ int main(int, char**)
         // Start the Dear ImGui frame
         ImGui_ImplDX11_NewFrame();
         ImGui_ImplWin32_NewFrame();
-        SceptreImgui_NewFrame(); //ImGui::NewFrame();
+        ImGui::NewFrame(); //ImGui::NewFrame();
 
         // 1. Show the big demo window (Most of the sample code is in ImGui::ShowDemoWindow()! You can browse its code to learn more about Dear ImGui!).
         if (show_demo_window)
