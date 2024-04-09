@@ -7,11 +7,12 @@ namespace SceptreEngine
 	public:
 		ImguiLayer();
 		~ImguiLayer();
+		virtual void OnAttach() override;
+		virtual void OnDetach() override;
+		virtual void OnImGuiRender() override;
 
-		void OnAttach();
-		void OnDetach();
-		void OnUpdate();
-		void OnEvent(Event& event);
+		void Begin();
+		void End();
 	private:
 		float m_Time = 0.0f;
 	};
