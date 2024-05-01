@@ -70,7 +70,6 @@ namespace SceptreEngine
 	{
 		ImGuiIO& io = ImGui::GetIO();
 		SceptreGame& game = SceptreGame::Get();
-		io.DisplaySize = ImVec2(game.GetWindow().GetWidth(), game.GetWindow().GetHeight());
 
 		// Rendering
 		ImGui::Render();

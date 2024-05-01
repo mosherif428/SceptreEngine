@@ -147,8 +147,6 @@
     <ClInclude Include="src\Sceptre\Core.h" />
     <ClInclude Include="src\Sceptre\Engine.h" />
     <ClInclude Include="src\Sceptre\EntryPoint.h" />
-    <ClInclude Include="src\Sceptre\Window.h" />
-    <ClInclude Include="src\Sceptre\WindowsWindow.h" />
     <ClInclude Include="src\vendor\imgui\backends\imgui_impl_dx11.h" />
     <ClInclude Include="src\vendor\imgui\backends\imgui_impl_win32.h" />
     <ClInclude Include="src\vendor\imgui\imconfig.h" />
@@ -269,8 +267,6 @@
     <ClCompile Include="src\Sceptre\LayerStack.cpp" />
     <ClCompile Include="src\Sceptre\Log.cpp" />
     <ClCompile Include="src\Sceptre\Engine.cpp" />
-    <ClCompile Include="src\Sceptre\Window.cpp" />
-    <ClCompile Include="src\Sceptre\WindowsWindow.cpp" />
     <ClCompile Include="src\vendor\imgui\backends\imgui_impl_dx11.cpp" />
     <ClCompile Include="src\vendor\imgui\backends\imgui_impl_win32.cpp" />
     <ClCompile Include="src\vendor\imgui\imgui.cpp" />
