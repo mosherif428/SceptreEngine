@@ -134,6 +134,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="src\Sceptre\Assert.h" />
+    <ClInclude Include="src\Sceptre\ImguiInit.h" />
     <ClInclude Include="src\Sceptre\ImguiLayer.h" />
     <ClInclude Include="src\Sceptre\Layer.h" />
     <ClInclude Include="src\enginepch.h" />
@@ -261,6 +262,7 @@
     <ClInclude Include="src\vendor\spdlog\version.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Sceptre\ImguiInit.cpp" />
     <ClCompile Include="src\Sceptre\ImguiLayer.cpp" />
     <ClCompile Include="src\Sceptre\Layer.cpp" />
     <ClCompile Include="src\enginepch.cpp" />

@@ -13,6 +13,10 @@
 #include <unordered_set>
 #include <d3d11.h>
 #include <tchar.h>
+#include <DirectXMath.h>
+#include <DirectXPackedVector.h>
+#include <DirectXColors.h>
+#include <DirectXCollision.h>
 
 #ifdef HZ_PLATFORM_WINDOWS
 #include <Windows.h>
