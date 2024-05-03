@@ -19,12 +19,12 @@ namespace SceptreEngine
 	bool SC_EXPORT_API CreateDeviceD3D(HWND hWnd);
 	void SC_EXPORT_API CleanupDeviceD3D();
 	void SC_EXPORT_API CreateRenderTarget();
-	void SC_EXPORT_API CleanupRenderTarget();
-	LRESULT WINAPI WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
+	void SC_EXPORT_API CleanupRenderTarget(); 
 
 	class SCEPTRE_API ImguiInit
 	{
 	public:
+		static LRESULT WINAPI WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 		static int ImguiMain(HWND hwnd, WNDCLASSEXW wc);
 		static void ImguiClean(HWND hwnd, WNDCLASSEXW wc);
 	};

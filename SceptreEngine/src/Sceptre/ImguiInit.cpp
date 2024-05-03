@@ -5,13 +5,7 @@ namespace SceptreEngine
     int ImguiInit::ImguiMain(HWND hwnd, WNDCLASSEXW wc)
     {
 
-        LRESULT WINAPI WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
-        // Create application window
-        ImGui_ImplWin32_EnableDpiAwareness();
-        wc = { sizeof(wc), CS_CLASSDC, WndProc, 0L, 0L, GetModuleHandle(nullptr), nullptr, nullptr, nullptr, nullptr, L"Sceptre Engine", nullptr };
-        ::RegisterClassExW(&wc);
-        hwnd = ::CreateWindowW(wc.lpszClassName, L"Sceptre Engine", WS_OVERLAPPEDWINDOW, 100, 100, 1280, 720, nullptr, nullptr, wc.hInstance, nullptr);
-
+        
         // Initialize Direct3D
         if (!CreateDeviceD3D(hwnd))
         {
@@ -232,18 +226,19 @@ namespace SceptreEngine
         if (g_mainRenderTargetView) { g_mainRenderTargetView->Release(); g_mainRenderTargetView = nullptr; }
     }
 
-    // Forward declare message handler from imgui_impl_win32.cpp
-    //extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
+    
+    //#ifdef SC_BUILD_DLL
 
     // Win32 message handler
-// You can read the io.WantCaptureMouse, io.WantCaptureKeyboard flags to tell if dear imgui wants to use your inputs.
-// - When io.WantCaptureMouse is true, do not dispatch mouse input data to your main application, or clear/overwrite your copy of the mouse data.
-// - When io.WantCaptureKeyboard is true, do not dispatch keyboard input data to your main application, or clear/overwrite your copy of the keyboard data.
-// Generally you may always pass all inputs to dear imgui, and hide them from your application based on those two flags.
-    LRESULT WINAPI WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
+    // You can read the io.WantCaptureMouse, io.WantCaptureKeyboard flags to tell if dear imgui wants to use your inputs.
+    // - When io.WantCaptureMouse is true, do not dispatch mouse input data to your main application, or clear/overwrite your copy of the mouse data.
+    // - When io.WantCaptureKeyboard is true, do not dispatch keyboard input data to your main application, or clear/overwrite your copy of the keyboard data.
+    // Generally you may always pass all inputs to dear imgui, and hide them from your application based on those two flags.
+    LRESULT WINAPI ImguiInit::WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
     {
-        //if (ImGui_ImplWin32_WndProcHandler(hWnd, msg, wParam, lParam))
-        //    return true;
+        IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
+        if (ImGui_ImplWin32_WndProcHandler(hWnd, msg, wParam, lParam))
+            return true;
 
         switch (msg)
         {
@@ -273,5 +268,5 @@ namespace SceptreEngine
         return ::DefWindowProcW(hWnd, msg, wParam, lParam);
     }
 
-    
+    //#endif
 }
