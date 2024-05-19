@@ -396,6 +396,24 @@
     <ClInclude Include="src\Sceptre\ImguiInit.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\Sceptre\Renderer\Direct3D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Sceptre\Renderer\DX11Renderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Sceptre\Renderer\Camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Sceptre\Renderer\Shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Sceptre\Renderer\Model.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Sceptre\Core\GameCore.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Sceptre\Engine.cpp">
@@ -440,6 +458,24 @@
     <ClCompile Include="src\Sceptre\ImguiInit.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Sceptre\Renderer\Direct3D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Sceptre\Renderer\DX11Renderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Sceptre\Renderer\Camera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Sceptre\Renderer\Shader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Sceptre\Renderer\Model.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Sceptre\Core\GameCore.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="src\vendor\imgui\LICENSE.txt" />
@@ -448,5 +484,7 @@
     <None Include="src\vendor\imgui\.editorconfig" />
     <None Include="src\vendor\imgui\.gitattributes" />
     <None Include="src\vendor\imgui\.gitignore" />
+    <None Include="src\Sceptre\Renderer\Shaders\color.vs" />
+    <None Include="src\Sceptre\Renderer\Shaders\color.ps" />
   </ItemGroup>
 </Project>

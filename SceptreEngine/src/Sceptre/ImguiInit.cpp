@@ -5,7 +5,6 @@ namespace SceptreEngine
     int ImguiInit::ImguiMain(HWND hwnd, WNDCLASSEXW wc)
     {
 
-        
         // Initialize Direct3D
         if (!CreateDeviceD3D(hwnd))
         {

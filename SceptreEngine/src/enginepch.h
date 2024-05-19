@@ -8,6 +8,7 @@
 
 #include <string>
 #include <sstream>
+#include <fstream>
 #include <vector>
 #include <unordered_map>
 #include <unordered_set>
@@ -17,6 +18,7 @@
 #include <DirectXPackedVector.h>
 #include <DirectXColors.h>
 #include <DirectXCollision.h>
+#include <d3dcompiler.h>
 
 #ifdef HZ_PLATFORM_WINDOWS
 #include <Windows.h>
