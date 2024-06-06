@@ -1,27 +1,24 @@
-
 #include <Sceptre.h>
 #include <Sceptre/Log.h>
 #include <Sceptre/Engine.h>
-
 #include <Windows.h>
 
-
-class Game : public SceptreEngine::SceptreGame
+class MapEditor : public SceptreEngine::SceptreGame
 {
 public:
-	Game()
+	MapEditor()
 	{
 		PushLayer(new SceptreEngine::Layer());
 		PushOverlay(new SceptreEngine::ImguiLayer());
 	}
 
-	~Game()
+	~MapEditor()
 	{
 
 	}
 };
 
-SceptreEngine::SceptreGame* SceptreEngine::CreateGame()
+SceptreEngine::SceptreGame* SceptreEngine::InitMapEditor()
 {
-	return new Game();
+	return new MapEditor();
 }

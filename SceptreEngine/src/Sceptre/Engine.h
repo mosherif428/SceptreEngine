@@ -15,7 +15,8 @@ namespace SceptreEngine {
 		SceptreGame();
 		virtual ~SceptreGame();
 
-		void Run();
+		void Build();
+		void Close();
 
 		void OnEvent(Event& e);
 		void PushLayer(Layer* layer);
@@ -33,4 +34,5 @@ namespace SceptreEngine {
 
 	//To be defined in CLIENT
 	SceptreGame* CreateGame();
+	SceptreGame* InitMapEditor();
 }

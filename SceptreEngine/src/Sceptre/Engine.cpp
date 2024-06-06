@@ -4,6 +4,7 @@
 #include "../Events/ApplicationEvent.h"
 #include "Log.h"
 #include "Assert.h"
+#include "Core/GameCore.h"
 namespace SceptreEngine
 {
 
@@ -51,12 +52,34 @@ namespace SceptreEngine
 		}
 	}
 
-	void SceptreGame::Run()
+	void SceptreGame::Build()
 	{
+		using clock = std::chrono::steady_clock;
+		auto lastUpdateTime = clock::now();
+
+		GameCore game;
+		SceptreEngine::GameCore::CGameState gamestate = game.Run();
+
 		while (m_Running)
 		{
 			for (Layer* layer : m_LayerStack)
 				layer->OnUpdate();
+
+			auto now = clock::now();
+			std::chrono::duration<double> deltaTime = now - lastUpdateTime;
+			lastUpdateTime = now;
+			
+			if (!game.IsPaused)
+			{
+				game.Tick(gamestate);
+
+			}
+
 		}
+	};
+
+	void SceptreGame::Close()
+	{
+		m_Running = false;
 	};
 }
